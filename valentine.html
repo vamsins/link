@@ -1,1 +1,94 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #noBtn {
+      background-color: #ccc;
+      color: black;
+      position: absolute;
+    }
+
+    #result {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="question">
+    <h1>Will you be my Valentine? 💖</h1>
+    <button id="yesBtn" onclick="showLove()">Yes 💘</button>
+    <button id="noBtn" onmouseover="moveNo()">No 😢</button>
+  </div>
+
+  <div class="card" id="result">
+    <h1>I knew it! 💕</h1>
+    <p>You make my world brighter every day.</p>
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9" alt="Romantic Image">
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("noBtn");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function showLove() {
+      document.getElementById("question").style.display = "none";
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
